@@ -1,16 +1,19 @@
+package bullscows;
+
 import java.util.Random;
 import java.util.Scanner;
 
-class BullsandCows {
-
+public class Main {
     public static void printResults(int cows, int bulls, String secretCode){
         if(cows == 0){
             System.out.print("Grade: " + bulls + " bull(s). ");
         }else if(bulls == 0){
             System.out.print("Grade: " + cows + " cow(s). ");
-        }else{
+        }else if(cows != 0 && bulls != 0){
             System.out.print("Grade: " + bulls + " bull(s)");
             System.out.print(" and 1 " + cows + " cow(s).");
+        }else{
+            System.out.print("none. ");
         }
         System.out.print("The secret code is " + secretCode);
 
@@ -21,10 +24,10 @@ class BullsandCows {
         Random rand = new Random();
         //int secretNum = rand.nextInt(10000);
         //System.out.println(rand.nextInt(10000));
-        String secretNum = "9305";
-       /* for(int i = 0; i < 4; i++){
+        String secretNum = "";
+        for(int i = 0; i < 4; i++){
             secretNum += rand.nextInt(10);
-        }*/
+        }
         //System.out.println(secretNum);
 
         Scanner in = new Scanner(System.in);
@@ -48,8 +51,9 @@ class BullsandCows {
             }//inner for
         }//outer for
 
-       // System.out.println("Grade: " + cows + " cow(s)");
+        // System.out.println("Grade: " + cows + " cow(s)");
         //System.out.println("Grade: " +  bulls + " bull(s)");
         printResults(cows, bulls, secretNum);
     }
+
 }
